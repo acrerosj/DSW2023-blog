@@ -34,3 +34,5 @@ require __DIR__.'/auth.php';
 
 Route::get('/posts/{id}/read', [PostController::class, 'read'])->name('posts.read');
 Route::resource('posts', PostController::class)->middleware('auth');
+Route::post('/posts/{post}/vote', [PostController::class, 'vote'])->name('posts.vote')
+    ->middleware('auth');
